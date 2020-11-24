@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 
+// this is for the review down below
 const reviewSchema = mongoose.Schema( {
     name: { type: String, required: true },
     rating: { type: String, required: true },
@@ -36,6 +37,8 @@ const productSchema = mongoose.Schema(
             require: true
         },
 
+        //reviews is gonna be array of review object, so we create
+        //reviewSchema
         reviews: [ reviewSchema ],
         
         rating: {
@@ -53,7 +56,7 @@ const productSchema = mongoose.Schema(
             require: true,
             default: 0
         },
-        countInStrock: {
+        countInStock: {
             type: Number,
             require: true,
             default: 0

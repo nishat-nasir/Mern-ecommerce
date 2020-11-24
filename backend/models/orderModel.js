@@ -5,7 +5,7 @@ const orderSchema = mongoose.Schema(
         user: {
             type: mongoose.Schema.Types.ObjectId,
             required: true,
-            ref: 'User'
+            ref: 'User' //refering the User model
         },
         orderItems: [
             {
@@ -26,10 +26,13 @@ const orderSchema = mongoose.Schema(
             postalCode: { type: String, required: true },
             country: { type: String, required:true },
         },
+
+    // here it is payment method
         paymentMethod: {
             type: String,
             required: true,
         },
+        // paypal will send some data back so we put it here
         paymentResult: {
             id: { type: String, },
             status: { type: String, },
